@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./img/RecipeLogo.jpeg" type="image/x-icon">
+    <link rel="stylesheet" href="./assets/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <title>Express Eat</title>
+</head>
+<body>
+
+    <!--- Navigation Bar -->
+    <div class="header">
+        <nav class="nav-bar">
+            <img src="./img/Logo.png" class="brand-name">
+            <a href="#" class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </a>
+            <div class="menu-bar">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+        <!-- Search Bar -->
+        <div class="title">Find a Recipe</div>
+        <div class="search-wrapper">
+            <div class="fa fa-search"></div>
+            <input type="text" name=""  id="search" placeholder="What do you want to eat?" onkeyup="search()">
+            <div class="fa fa-times" onclick="clearInput()" ></div>
+        </div>
+    </div>
+
+    <!-- Search Results -->
+        <div class="result">
+            <h1>Your Search Result: </h1>
+        </div>
+        
+        <!-- Main Content -->
+        <div class="card-grid" >
+            <div class="food-list" id="food-list">
+                    <p id="none" style="display: none;">Sorry, the food you were looking for was not available.</p>
+                    <div class="card card-shadow">
+                        <div class="card-header card-image">
+                            <img src="./img/Untitled Project (2).jpg">
+                        </div>
+                        <div class="card-body" >
+                        <h3> Veg meals</h3>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn" onclick="getRecipeDetails()">Get Recipe</button>
+                        </div>
+                    </div>
+                    <div class="card card-shadow">
+                        <div class="card-header card-image">
+                            <img src="re2.jpg">
+                        </div>
+                        <div class="card-body" >
+                        <h3> Momos </h3>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn" onclick="get2ndRecipe()">Get Recipe</button>
+                        </div>
+                    </div>
+                    <div class="card card-shadow">
+                        <div class="card-header card-image">
+                            <img src="./img/re5.jpg">
+                        </div>
+                        <div class="card-body" >
+                            <h3>paneer Tika</h3>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn" onclick="get3rdRecipe()">Get Recipe</button>
+                        </div>
+                    </div>
+                    <div class="card card-shadow">
+                        <div class="card-header card-image">
+                            <img src="./img/re6.jpg">
+                        </div>
+                        <div class="card-body" >
+                            <h3>Veg Briyani</h3>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn" onclick="get4thRecipe()">Get Recipe</button>
+                        </div>
+                    </div>
+                    <div class="card card-shadow">
+                        <div class="card-header card-image">
+                            <img src="./img/ICE cream1.jpg">
+                        </div>
+                        <div class="card-body" >
+                        <h3> Ice cream </h3>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn" onclick="get5thRecipe()">Get Recipe</button>
+                        </div>
+                    </div>
+                    <div class="card card-shadow">
+                        <div class="card-header card-image">
+                            <img src="./img/cake.png">
+                        </div>
+                        <div class="card-body" >
+                        <h3> Pan cake</h3>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn" onclick="get6thRecipe()">Get Recipe</button>
+                        </div>
+                    </div>
+                    <div class="card card-shadow">
+                        <div class="card-header card-image">
+                            <img src="./img/desert4.jpg">
+                        </div>
+                        <div class="card-body" >
+                        <h3> Strawberry Parfait</h3>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn" onclick="get7thRecipe()">Get Recipe</button>
+                        </div>
+                    </div>
+                    <div class="card card-shadow">
+                        <div class="card-header card-image">
+                            <img src="./img/Burger.webp">
+                        </div>
+                        <div class="card-body" >
+                        <h3> Burger</h3>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn" onclick="get8thRecipe()">Get Recipe</button>
+                        </div>
+                    </div>
+                    <div class="card card-shadow">
+                        <div class="card-header card-image">
+                            <img src="./img/Untitled Project (7).jpg">
+                        </div>
+                        <div class="card-body" >
+                        <h3>Black Forest cake</h3>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn" onclick="get9thRecipe()">Get Recipe</button>
+                        </div>
+                    </div>
+                    <div class="card card-shadow">
+                        <div class="card-header card-image">
+                            <img src="./img/mojito.jpg">
+                        </div>
+                        <div class="card-body" >
+                        <h3>Mojito</h3>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn" onclick="get10thRecipe()">Get Recipe</button>
+                        </div>
+                    </div>
+                    <div class="card card-shadow">
+                        <div class="card-header card-image">
+                            <img src="./img/cutlet.jpg">
+                        </div>
+                        <div class="card-body" >
+                        <h3>cutlet</h3>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn" onclick="get11thRecipe()">Get Recipe</button>
+                        </div>
+                    </div>
+            </div> 
+
+            <!--Ending of Main Content-->
+
+            <!--Recipe Details-->
+            <div class = "meal-detail" id="meal-detail">
+                <!-- recipe close btn -->
+                <button type = "button" class = "btn recipe-close-btn" id = "recipe-close-btn" onclick="closeBtn()">
+                    <i class ="fas fa-times"></i>
+                </button>
+
+                <!-- recipe details -->
+                <div class="meal-content">
+                    <h2 class="meal-name">Veg meals</h2>
+                    <div class="meal-about">
+                        <h3 class="meal-title-about">About Meal</h3>
+                       
+                         <p class="meal-descript-about">A vegetarian meal often includes a vegetable curry served with rice. This combination is nutritious and filling, providing vitamins from the veggies and energy from the rice..
+                            </p>
+                    
+                    </div>
+                    <div class = "meal-instruct">
+                        <h3>Ingridients:</h3>
+                        <p><br>Basmati rice – 1 cup
+                            <br>Water – 2 cups
+                             <br>Oil – 1 tablespoon
+
+<br>Cumin seeds – ½ teaspoon<br>
+
+<br>Onion – 1 small, chopped
+
+<br>Tomato – 1 medium, chopped
+
+<br>Ginger-garlic paste – 1 teaspoon
+
+<br>Potato – 1 small, diced
+
+<br>Carrot – 1 small, sliced
+
+<br>Green peas – ¼ cup (frozen or fresh)
+
+<br>Turmeric powder – ¼ teaspoon
+
+<br>Red chili powder – ½ teaspoon
+
+<br>Coriander powder – 1 teaspoon
+
+<br>Garam masala – ½ teaspoon
+
+<br>Salt – 1 teaspoon (adjust to taste)
+
+<br>Water – 1 cup
+
+<br>Fresh coriander – for garnish (optional)
+
+<br> Plain Rice Ingredients:
+<br>Basmati rice – 1 cup
+
+<br>Water – 2 cups
+
+<br>Salt – ½ teaspoon (optional)<br>
+                            
+                        
+            
+                        </p>
+                        <h3>Instruction:</h3>
+                        <p><br>1.Rinse 1 cup rice 2-3 times.
+                            <br>2.In a pot, add rice, 2 cups water, and salt. Bring to boil.
+
+                            <br>3.Reduce heat, cover, and simmer for 10-12 minutes until water is absorbed.
+
+                            <br>4.Turn off heat and keep covered for 5 minutes. Fluff with a fork before serving.
+                            <br>5.Heat oil in a pan. Add cumin seeds and let them sizzle.
+
+<br>6.Add chopped onions and sauté until golden brown (5-6 minutes).
+
+<br>7.Add minced garlic and grated ginger, cook for 1 minute.
+
+<br>8.Add chopped tomatoes and cook until soft and mushy (4-5 minutes).
+
+<br>9.Add turmeric, red chili powder, coriander powder, and salt. Mix well.
+
+<br>10.Add chopped mixed vegetables. Stir to coat with spices.
+
+<br>11.Pour 1 to 1½ cups water, cover, and cook on medium heat for 10-15 minutes until veggies are tender.</p>
+                        
+                
+                    </div>
+                    <div class = "meal-img">
+                        <img src = "./img/Untitled Project (2).jpg" alt = "">
+                      </div>
+                      <div class = "meal-link">
+                        <a href="https://www.youtube.com/watch?v=jZVChH4811M" class="meal-link-btn">Watch Video</a>
+                    </div>
+                </div>
+            </div>
+            <div class = "second-meal-detail" id="second-meal-detail">
+                <!-- recipe close btn -->
+                <button type = "button" class = "btn recipe-close-btn" id = "recipe-close-btn" onclick="closeBtn()">
+                    <i class ="fas fa-times"></i>
+                </button>
+
+                <!-- recipe details -->
+                <div class="meal-content">
+                    <h2 class="meal-name">Momos</h2>
+                    <div class="meal-about">
+                        <h3 class="meal-title-about">About Meal</h3>
+                        <p class="meal-descript-about">Vegetable momos are delicious steamed dumplings filled with finely chopped cabbage, carrot, onion, and spices. The dough is made from flour and water, rolled into thin circles, filled, and then steamed until soft and tender. </p>
+                    </div>
+                    <div class = "meal-instruct">
+                        <h3>Ingridients:</h3>
+                        <p><br>All-purpose flour (maida) – 2 cups
+                            <br>Cabbage (finely chopped) – 1 cup
+                            <br>Carrot (grated) – ½ cup
+                            <br>4 tablespoons vinegar
+                            <br>Oil – 1 tablespoon
+                            <br>Soy sauce – 1 tablespoon
+                            <br>Ginger (grated) – 1 teaspoon
+                            <br>Spring onions (optional, chopped) – ¼ cup
+
+
+                            <br>
+                        </p>
+                        <h3>Instruction:</h3>
+                        <p><br>1. Prepare the dough:
+Mix 2 cups all-purpose flour with ½ teaspoon salt. Slowly add about ¾ cup water and knead into a smooth, soft dough. Cover and rest for 30 minutes.
+                            <br>2.Make the filling:
+Finely chop 1 cup cabbage, grate ½ cup carrot, and finely chop ½ cup onion. Heat 1 tablespoon oil in a pan, sauté 2 minced garlic cloves and 1 teaspoon grated ginger for 1 minute. Add the vegetables, 1 tablespoon soy sauce, ½ teaspoon salt, and ¼ teaspoon black pepper. Cook for 5 minutes, then let it cool.
+                            <br>3. Divide the dough into small balls. Roll each ball into a thin, round circle about 3-4 inches in diameter.
+
+
+                            <br>4.Place the momos in a steamer lined with parchment paper or lightly greased. Steam for 10–12 minutes until the dough looks translucent and cooked through.
+                     
+                            
+                            <br>7. Serve hot. Share and enjoy!
+                            </p>
+                
+                    </div>
+                    <div class = "meal-img">
+                        <img src = "./img/re2.jpg" alt = "">
+                      </div>
+                      <div class = "meal-link">
+                        <a href="https://www.youtube.com/watch?v=UkMj9AYEq8E" class="meal-link-btn" >Watch Video</a>
+                    </div>
+                </div>
+            </div>  
+            <div class = "third-meal-detail" id="third-meal-detail">
+                <!-- recipe close btn -->
+                <button type = "button" class = "btn recipe-close-btn" id = "recipe-close-btn" onclick="closeBtn()">
+                    <i class ="fas fa-times"></i>
+                </button>
+
+                <!-- recipe details -->
+                <div class="meal-content">
+                    <h2 class="meal-name">panner tika</h2>
+                    <div class="meal-about">
+                        <h3 class="meal-title-about">About Meal</h3>
+                        <p class="meal-descript-about">Paneer Tikka Masala is a popular Indian dish where marinated and grilled paneer cubes are cooked in a rich, creamy, and spicy tomato-based gravy. It’s often served with naan, roti, or rice to make a complete and satisfying meal. 
+                        </p>
+                    </div>
+                    <div class = "meal-instruct">
+                        <h3>Ingridients:</h3>
+                        <p><br>250g paneer (cubed)
+                            ½ cup thick yogurt
+
+<br>1 tbsp ginger-garlic paste
+
+<br>1 tsp red chili powder
+
+<br>½ tsp turmeric powder
+
+<br>1 tsp garam masala
+
+<br>1 tbsp lemon juice
+
+<br>Salt to taste
+
+<br>1 tbsp oil
+For Masala Gravy:
+
+<br>2 tbsp oil or butter
+
+<br>1 large onion, finely chopped
+
+<br>2 tomatoes, pureed
+
+<br>1 tbsp ginger-garlic paste
+
+<br>1 tsp red chili powder
+
+<br>½ tsp turmeric powder
+
+<br>1 tsp coriander powder
+
+<br>1 tsp garam masala
+
+<br>½ cup fresh cream or cashew paste (optional for creaminess)
+
+<br>Salt to taste
+
+<br>Fresh coriander for garnish
+
+
+                            <br>
+                        </p>
+                        <h3>Instruction:</h3>
+                        <p><br>1. Rub salt, ground black pepper, and garlic powder on the pork tenderloin chop. Let it stay for at least 30 minutes.
+                           <br> 2.Prepare marinade:
+<br>Mix ½ cup yogurt, 1 tbsp ginger-garlic paste, 1 tsp red chili powder, ½ tsp turmeric, 1 tsp garam masala, 1 tbsp lemon juice, 1 tsp salt, and 1 tbsp oil in a bowl.
+
+<br>Marinate paneer:
+<br>Add 250g paneer cubes to the marinade. Coat well and let it rest for 30 minutes.
+
+<br>Skewer paneer:
+<br>Thread the marinated paneer cubes onto skewers. Optionally add bell pepper and onion cubes between paneer pieces.
+
+<br>Cook paneer:
+<br>Grill, bake at 200°C (400°F) for 15–20 minutes, or pan-fry until edges are slightly charred and cooked through.
+
+<br>Serve:
+<br>Serve hot with mint chutney, lemon wedges, and sliced onions.
+                            <br>8. Serve. Share and enjoy!
+                            </p>
+                
+                    </div>
+                    <div class = "meal-img">
+                        <img src = "./img/re6.jpg" alt = "">
+                      </div>
+                      <div class = "meal-link">
+                        <a href="https://www.youtube.com/watch?v=hsR0JaD1TyA" class="meal-link-btn" >Watch Video</a>
+                    </div>
+                </div>
+            </div>  
+            <div class = "four-meal-detail" id="four-meal-detail">
+                <!-- recipe close btn -->
+                <button type = "button" class = "btn recipe-close-btn" id = "recipe-close-btn" onclick="closeBtn()">
+                    <i class ="fas fa-times"></i>
+                </button>
+
+                <!-- recipe details -->
+                <div class="meal-content">
+                    <h2 class="meal-name">veg Briyani</h2>
+                    <div class="meal-about">
+                        <h3 class="meal-title-about">About Meal</h3>
+                        <p class="meal-descript-about">Vegetable Biryani is a fragrant, flavorful one-pot rice dish made with basmati rice, mixed vegetables, and aromatic spices. It’s a complete meal by itself, often served with cooling raita (yogurt salad) or a simple salad on the side. This dish is popular across India and perfect for lunch or dinner.
+                        </p>
+                    </div>
+                    <div class = "meal-instruct">
+                        <h3>Ingridients:</h3>
+                        <p><br>Basmati rice – 1 cup
+
+<br>Mixed vegetables (carrot, peas, beans, potato) – 1½ cups, chopped
+
+<br>Onion – 1 medium, thinly sliced
+
+<br>Tomato – 1 medium, chopped
+
+<br>Ginger-garlic paste – 1 tsp
+
+<br>Yogurt – ¼ cup
+
+<br>Biryani masala or garam masala – 1 tbsp
+
+<br>Turmeric powder – ¼ tsp
+
+<br>Red chili powder – ½ tsp
+
+<br>Whole spices (bay leaf, cinnamon stick, cloves, cardamom) – 1 each
+
+<br>Oil or ghee – 2 tbsp
+
+<br>Salt – to taste
+
+<br>Fresh coriander and mint leaves – a handful, chopped
+
+<br>Water – 1½ cups
+                        </p>
+                        <h3>Instruction:</h3>
+                        <p><br>1.Rinse and soak rice for 20 minutes.
+
+<br>2.Heat oil/ghee in a pot, add whole spices and sliced onions. Sauté until golden.
+
+<br>3.Add ginger-garlic paste, tomatoes, and cook for 2-3 minutes.
+
+<br>4.Add mixed vegetables, yogurt, spices, and salt. Cook for 5 minutes.
+
+<br>5.Add drained rice, water, and chopped herbs. Mix gently.
+
+<br>6.Cover and cook on low heat until rice is done and water absorbed (about 15-20 minutes).
+
+<br>7.Fluff rice and serve hot with raita or salad.
+                        </p>
+                
+                    </div>
+                    <div class = "meal-img">
+                        <img src = "./img/re6.jpg" alt = "">
+                      </div>
+                      <div class = "meal-link">
+                        <a href="https://www.youtube.com/watch?v=rZzim9n_QHA" class="meal-link-btn" >Watch Video</a>
+                    </div>
+                </div>
+            </div>  
+            <div class = "five-meal-detail" id="five-meal-detail">
+                <!-- recipe close btn -->
+                <button type = "button" class = "btn recipe-close-btn" id = "recipe-close-btn" onclick="closeBtn()">
+                    <i class ="fas fa-times"></i>
+                </button>
+
+                <!-- recipe details -->
+                <div class="meal-content">
+                    <h2 class="meal-name">Ice cream</h2>
+                    <div class="meal-about">
+                        <h3 class="meal-title-about">About Meal</h3>
+                        <p class="meal-descript-about">Ice cream is a popular dessert served after lunch or dinner. It’s sweet, cold, and refreshing, making it a perfect way to end a meal on a delicious note. Whether it’s a simple vanilla scoop or a rich chocolate delight, ice cream adds a sweet treat that everyone enjoys.
+                    </div>
+                    <div class = "meal-instruct">
+                        <h3>Ingridients:</h3>
+                        <p><br>1.  2 cups heavy cream
+
+<br>2 . 1 can (14 oz) sweetened condensed milk
+
+<br>3. 1 tsp vanilla extract
+                            <br>
+                        </p>
+                        <h3>Instruction:</h3>
+                        <p><br>Whip the cream:
+<br>Take 2 cups of heavy cream and beat it with a hand mixer or whisk until stiff peaks form (the cream holds its shape when you lift the whisk).
+
+<br>Mix in condensed milk and vanilla:
+<br>Add 1 can (14 oz) sweetened condensed milk and 1 teaspoon vanilla extract to the whipped cream. Fold gently using a spatula until everything is combined. Be careful not to deflate the cream.
+
+<br>Freeze:
+<br>Pour the mixture into a freezer-safe container. Cover it with a lid or plastic wrap.
+
+<br>Set:
+<br>Place the container in the freezer and let it freeze for at least 6 hours or overnight until firm.
+                            <br>.Scoop the ice cream into bowls or cones and enjoy!
+                        </p>
+                
+                    </div>
+                    <div class = "meal-img">
+                        <img src = "./img/ICE cream1.jpg" alt = "">
+                      </div>
+                      <div class = "meal-link">
+                        <a href="https://www.youtube.com/watch?v=7gJIyHnD710" class="meal-link-btn" >Watch Video</a>
+                    </div>
+                </div>
+            </div> 
+            <div class = "six-meal-detail" id="six-meal-detail">
+                <!-- recipe close btn -->
+                <button type = "button" class = "btn recipe-close-btn" id = "recipe-close-btn" onclick="closeBtn()">
+                    <i class ="fas fa-times"></i>
+                </button>
+
+                <!-- recipe details -->
+                <div class="meal-content">
+                    <h2 class="meal-name">pan cake</h2>
+                    <div class="meal-about">
+                        <h3 class="meal-title-about">About Meal</h3>
+                        <p class="meal-descript-about">Sweet pancakes are a tasty and easy breakfast or snack. They are soft, sweet, and can be eaten with syrup, fruits, or honey. Pancakes give you energy and make a good start to the day. They are quick to cook and loved by kids and adults alike.
+
+
+                        </p>
+                    </div>
+                    <div class = "meal-instruct">
+                        <h3>Ingridients:</h3>
+                        <p><br>1 cup all-purpose flour
+
+<br>1 tbsp sugar
+
+<br>1 tsp baking powder
+
+
+<br>¼ tsp salt
+
+<br>1 cup milk
+
+<br>1 egg
+
+<br>2 tbsp melted butter or oil
+
+<br>1 tsp vanilla extract (optional)
+
+<br>Butter or oil for cooking
+
+<br>Maple syrup, honey, or fruits for serving
+                        </p>
+                        <h3>Instruction:</h3>
+                        <p><br>In a bowl, mix flour, sugar, baking powder, and salt.
+
+<br>In another bowl, whisk milk, egg, melted butter, and vanilla extract.
+
+<br>Pour the wet ingredients into the dry ingredients. Mix gently until combined (a few lumps are okay).
+
+<br>Heat a non-stick pan and grease lightly with butter or oil.
+
+<br>Pour about ¼ cup batter onto the pan. Cook on medium heat until bubbles form on the surface (about 2 minutes).
+
+<br>Flip and cook the other side until golden brown (1-2 minutes).
+
+<br>Repeat with remaining batter.
+
+<br>Serve warm with maple syrup, honey, or fresh fruits.
+                        </p>
+                
+                    </div>
+                    <div class = "meal-img">
+                        <img src = "./img/cake.png" alt = "">
+                      </div>
+                      <div class = "meal-link">
+                        <a href="https://www.youtube.com/watch?v=tnslU6rQ5HI" class="meal-link-btn" >Watch Video</a>
+                    </div>
+                </div>
+            </div> 
+            <div class = "seven-meal-detail" id="seven-meal-detail">
+                <!-- recipe close btn -->
+                <button type = "button" class = "btn recipe-close-btn" id = "recipe-close-btn" onclick="closeBtn()">
+                    <i class ="fas fa-times"></i>
+                </button>
+
+                <!-- recipe details -->
+                <div class="meal-content">
+                    <h2 class="meal-name">Stawberry parfait</h2>
+                    <div class="meal-about">
+                        <h3 class="meal-title-about">About Meal</h3>
+                        <p class="meal-descript-about">Strawberry parfait is a light and refreshing dessert or snack made by layering fresh strawberries, yogurt or cream, and crunchy granola or nuts.
+                        </p>
+                    </div>
+                    <div class = "meal-instruct">
+                        <h3>Ingridients:</h3>
+                        <p><br>Deselect All.
+<br>3 cups vanilla nonfat yogurt.
+<br>1 cup fresh or defrosted frozen strawberries in juice.
+<br>1 pint fresh blackberries, raspberries or blueberries.
+<br>1 cup good quality granola.
+                        </p>
+                        <h3>Instruction:</h3>
+                        <p><br>1.Prepare strawberries:
+Wash and slice the fresh strawberries.
+
+Layer yogurt:
+Take a clean glass or bowl. Add a spoonful of yogurt at the bottom.
+
+Add strawberries:
+Place a layer of sliced strawberries on top of the yogurt.
+
+Add granola:
+Sprinkle some granola or crushed nuts over the strawberries.
+
+Repeat layers:
+Repeat the layers — yogurt, strawberries, granola — until the glass is filled.
+
+Finish with honey:
+Drizzle honey or maple syrup on the top layer (optional).
+                        </p>
+                
+                    </div>
+                    <div class = "meal-img">
+                        <img src = "./img/desert4.jpg" alt = "">
+                      </div>
+                      <div class = "meal-link">
+                        <a href="https://www.youtube.com/watch?v=eG11MgqIIhU" class="meal-link-btn" >Watch Video</a>
+                    </div>
+                </div>
+            </div> 
+            <div class = "eight-meal-detail" id="eight-meal-detail">
+                <!-- recipe close btn -->
+                <button type = "button" class = "btn recipe-close-btn" id = "recipe-close-btn" onclick="closeBtn()">
+                    <i class ="fas fa-times"></i>
+                </button>
+
+                <!-- recipe details -->
+                <div class="meal-content">
+                    <h2 class="meal-name"> Burger</h2>
+                    <div class="meal-about">
+                        <h3 class="meal-title-about">About Meal</h3>
+                        <p class="meal-descript-about">This Veg Burger is packed with flavor and nutrients — a crispy vegetable patty layered with fresh veggies, cheese, and zesty sauces, all tucked in a toasted burger bun. Ideal for a hearty lunch or dinner, served with fries or a salad.
+                        </p>
+                    </div>
+                    <div class = "meal-instruct">
+                        <h3>Ingridients:</h3>
+                        <p><br>2 medium potatoes (boiled and mashed)
+
+<br>½ cup grated carrot
+
+<br>½ cup finely chopped beans or peas (optional)
+
+<br>1 small onion (finely chopped)
+
+<br>2 tbsp corn (boiled)
+
+<br>1–2 green chilies (finely chopped) or chili flakes
+
+<br>1 tsp ginger-garlic paste
+
+<br>½ tsp cumin powder
+
+<br>½ tsp garam masala or curry powder
+
+<br>Salt to taste
+
+<br>2 tbsp cornflour or breadcrumbs (to bind)
+
+<br>Oil for frying or shallow frying
+                            
+                        </p>
+                        <h3>Instruction:</h3>
+                        <p><br>1. Make the Patty:
+<br>In a large bowl, mix mashed potatoes, grated carrots, corn, beans, onion, and spices.
+
+<br>Add cornflour or breadcrumbs to bind the mixture.
+
+<br>Shape into round patties.
+
+<br>Shallow fry or deep fry in hot oil until golden and crisp. Drain on paper towels.
+
+2. Toast the Buns:
+<br>Slice burger buns in half and toast them lightly with butter on a hot pan.
+
+3. Assemble the Burger:
+<br>Spread mayo, ketchup, or chutney on both sides of the bun.
+
+<br>Place a lettuce leaf on the bottom bun, then add the veg patty.
+
+<br>Top with cheese, tomato, onion slices, and another dab of sauce.
+
+<br>Close with the top bun.
+
+🍽️ Serving as a Meal
+Serve With:
+
+<br>French Fries or Masala Fries
+
+<br>Side Salad: Cucumber, tomato, and onion with lemon dressing
+
+<br>Drink Option: Lemonade, soda, or a fruit smoothie
+
+<br>Optional Dessert: A scoop of vanilla ice cream or a fruit bowl.
+                        </p>
+                
+                    </div>
+                    <div class = "meal-img">
+                        <img src = "./img/Burger.webp" alt = "">
+                      </div>
+                      <div class = "meal-link">
+                        <a href="https://www.youtube.com/watch?v=FBW0oZe37yA" class="meal-link-btn" >Watch Video</a>
+                    </div>
+                </div>
+            </div> 
+            <div class = "nine-meal-detail" id="nine-meal-detail">
+                <!-- recipe close btn -->
+                <button type = "button" class = "btn recipe-close-btn" id = "recipe-close-btn" onclick="closeBtn()">
+                    <i class ="fas fa-times"></i>
+                </button>
+
+                <!-- recipe details -->
+                <div class="meal-content">
+                    <h2 class="meal-name">BlackForest cake</h2>
+                    <div class="meal-about">
+                        <h3 class="meal-title-about">About Meal</h3>
+                        <p class="meal-descript-about">Black Forest cake is generally a calorie-rich indulgence, with its sugar content coming from the chocolate, whipped cream, and cherries. While it can be a fun treat, it's important to consider its sugar content and enjoy it in moderation. 
+                        </p>
+                    </div>
+                    <div class = "meal-instruct">
+                        <h3>Ingridients:</h3>
+                        <p><br>1 ½ cups all-purpose flour
+
+<br>1 cup sugar
+
+<br>½ cup cocoa powder
+
+<br>1 tsp baking soda
+
+<br>1 tsp vinegar (white or apple cider)
+
+<br>1 cup milk (any kind)
+
+<br>½ cup oil (vegetable or sunflower)
+
+<br>1 tsp vanilla extract
+
+<br>½ cup hot water or coffee
+                        </p>
+                        <h3>Instruction:</h3>
+                        <p><br>Preheat oven to 180°C (350°F).
+
+<br>Mix flour, sugar, cocoa powder, and baking soda in a bowl.
+
+<br>Add milk, oil, vinegar, and vanilla extract. Stir well.
+
+<br>Add hot water or coffee and mix until smooth.
+
+<br>Pour into a greased cake pan. Bake 30–35 minutes.
+
+<br>Let cake cool, then spread whipped cream and cherry jam on top.
+
+<br>Decorate with cherries and chocolate if you want.
+                        </p>
+                
+                    </div>
+                    <div class = "meal-img">
+                        <img src = "./img/Untitled Project (7).jpg" alt = "">
+                      </div>
+                      <div class = "meal-link">
+                        <a href="https://www.youtube.com/watch?v=FBW0oZe37yA" class="meal-link-btn" >Watch Video</a>
+                    </div>
+                </div>
+            </div> 
+            <div class = "ten-meal-detail" id="ten-meal-detail">
+                <!-- recipe close btn -->
+                <button type = "button" class = "btn recipe-close-btn" id = "recipe-close-btn" onclick="closeBtn()">
+                    <i class ="fas fa-times"></i>
+                </button>
+
+                <!-- recipe details -->
+                <div class="meal-content">
+                    <h2 class="meal-name">Mojito</h2>
+                    <div class="meal-about">
+                        <h3 class="meal-title-about">About Meal</h3>
+                        <p class="meal-descript-about">Today, the Mojito is one of the undisputed kings of the cocktail world, grabbing a spot on most cocktail menus. The reason for this is its simplicity. A winning combination of flavours that champions good rum and fresh
+                    </div>
+                    <div class = "meal-instruct">
+                        <h3>Ingridients:</h3>
+                        <p><br>1.10 fresh mint leaves
+
+<br>2.1 lime (cut into wedges)
+
+<br>3.2 tsp sugar (or simple syrup)
+
+<br>4.60 ml white rum
+
+<br>5.Soda water (club soda)
+
+<br>6.Ice cube
+                        </p>
+                        <h3>Instruction:</h3>
+                        <p><br>Put mint leaves and lime wedges into a sturdy glass.
+
+<br>Muddle (press) gently to release juice and mint flavor.
+
+<br>Add sugar and muddle again a bit.
+
+<br>Fill the glass with ice cubes.
+
+<br>Pour in rum.
+
+<br>Top with soda water and stir gently.
+
+<br>Garnish with a mint sprig and lime slice.
+                        </p>
+                
+                    </div>
+                    <div class = "meal-img">
+                        <img src = "./img/mojito.jpg" alt = "">
+                      </div>
+                      <div class = "meal-link">
+                        <a href="https://www.youtube.com/shorts/I02DdBG61-M" class="meal-link-btn" >Watch Video</a>
+                    </div>
+                </div>
+            </div> 
+            <div class = "eleven-meal-detail" id="four-meal-detail">
+                <!-- recipe close btn -->
+                <button type = "button" class = "btn recipe-close-btn" id = "recipe-close-btn" onclick="closeBtn()">
+                    <i class ="fas fa-times"></i>
+                </button>
+
+                <!-- recipe details -->
+                <div class="meal-content">
+                    <h2 class="meal-name">veg Cutlet</h2>
+                    <div class="meal-about">
+                        <h3 class="meal-title-about">About Meal</h3>
+                        <p class="meal-descript-about">Veg cutlets make a delicious and wholesome snack or light meal. Crispy on the outside and soft inside, these flavorful patties made from mashed potatoes and mixed vegetables are perfect when served hot with tangy chutneys or ketchup. They pair well with a fresh salad or a cup of tea, making them ideal for tea-time, evening snacks, or even a light lunch. For a fuller meal, veg cutlets can be served alongside bread rolls or stuffed into sandwiches with fresh veggies and sauces for a satisfying vegetarian option.
+                        </p>
+                    </div>
+                    <div class = "meal-instruct">
+                        <h3>Ingridients:</h3>
+                        <p><br>2 medium potatoes (boiled and mashed)
+
+<br>1 cup mixed vegetables (carrot, peas, beans) finely chopped or grated
+
+<br>1 small onion (finely chopped)
+
+<br>2 green chilies (finely chopped) — optional
+
+<br>1 tsp ginger-garlic paste
+
+<br> tsp garam masala or chat masala
+
+<br>2 tbsp coriander leaves (chopped)
+
+<br>Salt to taste
+
+<br>2–3 tbsp breadcrumbs (for binding)
+
+<br>Oil for shallow frying
+
+<br>Extra breadcrumbs for coating
+                            
+                        </p>
+                        <h3>Instruction:</h3>
+                        <p><br>Prepare the mix:
+
+<br>In a bowl, combine mashed potatoes, chopped veggies, onion, green chilies, ginger-garlic paste, spices, coriander, salt, and breadcrumbs.
+
+<br>Mix well and form into small round or oval patties.
+
+<br>Coat the cutlets:
+
+<br>Roll each patty lightly in breadcrumbs to coat evenly.
+
+<br>Cook:
+
+<br>Heat oil in a pan over medium heat.
+
+<br>Shallow fry cutlets until golden and crisp on both sides (about 3–4 minutes per side).
+
+<br>Drain on paper towels.
+
+
+                            
+
+<br>Great as a tea-time snack for cutlet
+                        </p>
+                
+                    </div>
+                    <div class = "meal-img">
+                        <img src = "./img/cutlet.jpg " alt = "">
+                      </div>
+                      <div class = "meal-link">
+                        <a href="https://tinyurl.com/yz55k3bv" class="meal-link-btn" >Watch Video</a>
+                    </div>
+                </div>
+            </div> 
+            
+            
+        </div>
+            <!--Ending of Recipe Details-->
+
+            <!--Footer-->
+    <div class="footer">
+        <div class="social-btn">
+            <a href="" target="_blank" ><i class="	fab fa-facebook"></i></a>
+            <a href="" target="_blank" ><i class="	fab fa-instagram"></i></a>
+            <a href="" target="_blank"><i class="	fab fa-linkedin"></i></a>
+            <a href="https://github.com/settings/copilot/features" target="_blank" "><i class="	fab fa-github"></i></a>
+        </div>
+            <div class="quick-bar">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        <p>Copyright &copy; 2025 Express Eat. All right reserved</p>  
+    </div>
+
+    <!--Ending of Footer-->
+
+<!--Script for Javascript-->
+<script src="./assets/index.js"></script>
+</body>
+</html>
